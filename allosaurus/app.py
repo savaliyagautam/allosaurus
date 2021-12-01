@@ -14,7 +14,7 @@ def read_recognizer(inference_config_or_name='latest', alt_model_path=None):
         if not alt_model_path.exists():
             download_model(inference_config_or_name, alt_model_path)
     # download specified model automatically if no model exists
-    if len(get_all_models()) == 0:
+    if len(get_all_models(alt_model_path)) == 0:
         download_model('latest', alt_model_path)
 
     # create default config if input is the model's name
